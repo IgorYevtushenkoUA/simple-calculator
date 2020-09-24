@@ -1,14 +1,9 @@
 :root {
     --width: 400px;
     --height: 500px;
-    --gap: 10px
+    --gap: 10px;
+    --back-color: #ECE8E7;
 }
-
-/*body {
-	background-color: #B7D9F0;
-
-}*/
-
 
 .main {
     display: flex;
@@ -21,24 +16,48 @@
 
 input {
     width: var(--width);
+    height: 50px;
+    outline: none;
+    border: 2px solid var(--back-color);
+    font-size: 25px;
+    padding: 0 10px;
+    text-align: right;
+
 }
 
 .calc {
-    width: var(--width);
-    height: var(--width);
-    background-color: #B7D9F0;
+    width: var(--width) -20px;
+    height: var(--height);
+    background-color: var(--back-color);
 }
 
 .calc-btn {
-    /*width: var(--width)/4;*/
-    /*height: var(--height)/4;*/
-    width: var(--width) / 4 + var(--gap);
-    height: var(--height) / 4;
-
-    color: red;
+    width: 91px;
+    height: 80px;
+    margin: 4px 0 0 8px;
+    font-size: 30px;
+    color: black;
     background-color: #B7D9F0;
     border: black;
     outline: none;
+}
+
+.result {
+    background-color: cadetblue;
+}
+
+.number, .decimal {
+    background-color: gainsboro;
+}
+
+.basic-math-operation,
+.diff-math-operation,
+.del-operation {
+    background-color: #C5BDBC;
+}
+
+.number:hover {
+
 }
 
 button:hover {
