@@ -7,5 +7,5 @@ function countNumbersAfterDot(num) {
     return count - 1
 }
 
-console.log(countNumbersAfterDot("123")
+console.log(countNumbersAfterDot("123.1")
 )
