@@ -11,7 +11,7 @@ let lastOperation = ''
 let isFirstNumber = true
 let isNewNumber = true
 let isMinusNumber = true
-
+let isResult = false
 
 for (let i = 0; i < numbers.length; i++) {
     let number = numbers[i]
@@ -53,6 +53,9 @@ decimal.addEventListener('click', function (e) {
 ///////////////////////////////////////////////////////////////////
 
 function numberPress(num) {
+    if (isResult) {
+        display.value = 0
+    }
     if (isNewNumber && isMinusNumber === false) {
         if (display.value === '0' || display.value === '') {
             debugger
@@ -78,6 +81,7 @@ function numberPress(num) {
     }
     // isNewNumber = false
     isMinusNumber = false
+    isResult = false
 }
 
 function mathOperation(operation) {
@@ -156,6 +160,8 @@ function showResult() {
     isNewNumber = true
     isFirstNumber = true
     isMinusNumber = false
+    currentValue = 0
+    isResult = true
 }
 
 function decimalBtn() {
