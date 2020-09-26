@@ -63,7 +63,8 @@ function addNumber(num) {
         display.value = num
         nextNumber = false
     } else {
-        alert("You can not do it because x less than 0")
+        // alert("here")
+        // display.value = "You can not do it because x less than 0"
     }
     addedNumberToCurrentNumbers = false
     isOperationAgainClick = false
@@ -107,7 +108,9 @@ function analyzeMathOperation(operation) {
                 // currentNumbers.push(x)
             } else {
                 doDeleteOperation('C')
-                alert("Нероректні дані в математичній операції")
+                // alert("Incorrect: number can not be lass than 0")
+                display.value = "You can't do it because x < 0"
+
             }
             // display.value = x
 
@@ -180,6 +183,9 @@ function doMathOperation(operation) {
     add2CurrentNumbersList(res.toString())
     debugger
     display.value = (parseFloat(currentNumbers[0]) / multiplyForDots).toString()
+    if (display.value === 'NaN') {
+        display.value = "You do incorrect operation"
+    }
     // currentNumbers.push(res.toString())
     // display.value = res.toString()
     nextNumber = true

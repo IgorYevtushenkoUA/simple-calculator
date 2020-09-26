@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<button class="instructionBtn" id="instructionBtn">INSTRUCTION</button>
+
 <main class="main">
 	<div class="calc">
 		<div class="calc-display">
@@ -46,9 +48,45 @@
 			</table>
 		</div>
 	</div>
-	<script  src="script.js"></script>
-
 </main>
+
+<div class="modal-window" id="modal-window">
+	<div class="instruction">
+		<div class="sqrt">
+			SQRT
+			<ul>
+				<li>25 √ => 5</li>
+				<li>if n < 0 then ERROR text in display</li>
+			</ul>
+		</div>
+		<div class="pow">
+			POW
+			<ul>
+				<li>2 ^ 2 => 4</li>
+			</ul>
+		</div>
+		<div class="math-operation">
+			MATH OPERATION
+            <ul>
+				<li><pre>if you click few time for operation it will use the first operation
+for example: click+ click* click* then will use operation +
+BUT if you click for minus (-) and then click for another operation (+,*,/,pow,sqrt)
+you will have mistake
+because it means that -> YOUR_NUMBER click- |here should be another number
+or operation minus| all another is incorrect
+at the same time you can click twice to minus (-) to get negative number
+
+					</pre></li>
+			</ul>
+		</div>
+	</div>
+    <span class="close">&times;</span>
+</div>
+
+
+<script  src="scriptInstruction.js"></script>
+<script  src="script.js"></script>
+
 
 </body>
 </html>
