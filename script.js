@@ -100,7 +100,7 @@ function analyzeMathOperation(operation) {
     }
     if (operation !== '-' && !isOperationAgainClick) {
         if (operation === 'SQRT' && currentNumbers.length > 0) {
-            let x = parseFloat(currentNumbers.pop())/multiplyForDots
+            let x = parseFloat(currentNumbers.pop()) / multiplyForDots
             if (x >= 0) {
                 x = sqrtOperation(x)
                 add2CurrentNumbersList(x.toString())
@@ -150,6 +150,7 @@ function analyzeMathOperation(operation) {
 }
 
 function doMathOperation(operation) {
+    debugger
     let y = parseFloat(currentNumbers.pop())
     let x = parseFloat(currentNumbers.pop())
     isMinusOperation = false
@@ -160,17 +161,22 @@ function doMathOperation(operation) {
         res = x - y
     } else if (operation === '*') {
         res = x * y
+        if (maxNumbersAfterDot > 0) {
+            debugger
+            res /= 10**(maxNumbersAfterDot+1)
+            debugger
+        }
     } else if (operation === '/') {
         res = x / y
     } else if (operation === 'POW') {
-        x/=multiplyForDots
-        y/=multiplyForDots
+        x /= multiplyForDots
+        y /= multiplyForDots
         res = x ** y
     } else if (operation === 'SQRT') {
         alert("HERE I DONT KNOW KNOW")
         res = "99999"
     }
-    res /= (operation==='POW') ? 1 : multiplyForDots
+    res /= (operation === 'POW'|| operation === "*") ? 1 : multiplyForDots
     add2CurrentNumbersList(res.toString())
     debugger
     display.value = (parseFloat(currentNumbers[0]) / multiplyForDots).toString()
